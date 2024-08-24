@@ -19,11 +19,19 @@ body, html {
     height: 100vh;
     text-align: center;
     color: #fff;
-   
+    position: relative; /* 부모 요소에 상대적 위치 지정 */
+    padding-top: 20vh;
 }
 
 .birthday-image {
-    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* 기본 크기 */
+    height: auto;
+    opacity: 0.5; /* 사진의 투명도를 조절하여 글씨가 잘 보이게 함 */
+    z-index: -1; /* 글씨보다 뒤에 배치 */
 }
 
 h1 {
@@ -49,6 +57,10 @@ h2 {
     font-size: 2em;
     color: #fff;
     margin-bottom: 40px;
+}
+
+.countdown span {
+    margin: 0 5px;
 }
 
 .balloons {
@@ -117,5 +129,25 @@ h2 {
     }
     to {
         opacity: 1;
+    }
+}
+
+/* 모바일 환경에 맞는 스타일 */
+@media (max-width: 768px) {
+    .birthday-image {
+        width: 100%; /* 모바일 화면에서 사진을 100% 크기로 설정 */
+        height: auto;
+    }
+
+    h1 {
+        font-size: 2.5em; /* 모바일 화면에서 제목 폰트 크기 조절 */
+    }
+
+    h2 {
+        font-size: 1.5em; /* 모바일 화면에서 서브 제목 폰트 크기 조절 */
+    }
+
+    .countdown {
+        font-size: 1.5em; /* 모바일 화면에서 카운트다운 폰트 크기 조절 */
     }
 }
